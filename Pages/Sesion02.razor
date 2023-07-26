@@ -1,0 +1,79 @@
+﻿@page "/sesion02"
+
+<EditForm Model="@ModelPersona" OnValidSubmit="Aceptar">
+
+<Contenedor Titulo="@MiTitulo" Cancelar="Cancelar">
+	<Codigo>
+			<DataAnnotationsValidator></DataAnnotationsValidator>
+			<table>
+				<tr>
+					<td>
+						<label for="Rut">Rut:</label>
+					</td>
+					<td>						
+						<input type="text" id="Rut" @bind-value="@ModelPersona.Rut" />
+						
+					</td>
+					<td><ValidationMessage For="()=>ModelPersona.Rut" /></td>
+				</tr>
+				<tr>
+					<td>
+						<label for="Nombre">Nombre Completo:</label>
+					</td>
+					<td>
+						<input type="text" id="Nombre" @bind-value="@ModelPersona.Nombre" />
+					</td>
+					<td>
+						<ValidationMessage For="()=>ModelPersona.Nombre" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="Nombre">Nombre Completo:</label>
+					</td>
+					<td>
+						<input type="date" id="FechaNac" @bind-value="@ModelPersona.FechaNac" />
+					</td>
+					<td>
+						<ValidationMessage For="()=>ModelPersona.FechaNac" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="User">Username:</label>
+					</td>
+					<td>
+						<input type="text" id="User" @bind-value="@ModelPersona.User" />
+					</td>
+					<td>
+						<ValidationMessage For="()=>ModelPersona.User" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="Pass">Password:</label>
+					</td>
+					<td>
+						<input type="password" id="Pass" @bind-value="@ModelPersona.Password" />
+					</td>
+					<td>
+						<ValidationMessage For="()=>ModelPersona.Password" />
+					</td>
+				</tr>
+			</table>
+	</Codigo>
+	<Foot>
+
+	</Foot>
+
+</Contenedor>
+</EditForm>
+
+<!--<Sesion NumeroSesion="2"></Sesion>-->
+
+
+@code {
+	
+
+
+}

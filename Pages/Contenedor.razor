@@ -1,0 +1,32 @@
+﻿<div class="card">
+	<div class="card-header">
+		<h1>@Titulo</h1>
+	</div>
+
+	<div class="card-body">
+		@Codigo
+
+		
+		
+	</div>
+
+	<div class="card-footer">
+		@Foot
+		<button class="btn btn-primary" type="submit" id="Aceptar" @onclick="Aceptar">Aceptar</button>
+
+		<button class="btn btn-primary" type="button" id="Cancelar" @onclick="Cancelar">Cancelar</button>
+	</div>
+
+
+</div>
+
+@code {
+
+	[Parameter] public string Titulo { get; set; } = "";
+	[Parameter] public RenderFragment Codigo { get; set; }
+	[Parameter] public RenderFragment Foot { get; set; }
+	[Parameter] public EventCallback Cancelar { get; set; }
+	[Parameter] public EventCallback Aceptar { get; set; }
+
+
+}

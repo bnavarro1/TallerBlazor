@@ -1,0 +1,48 @@
+﻿<h3>Crear Usuario</h3>
+
+<EditForm Model="@ModelPersona" OnValidSubmit="Aceptar">
+	<DataAnnotationsValidator></DataAnnotationsValidator>
+
+	<label for="Rut">Rut:</label>
+	<input type="text" id="Rut" @bind-value="@ModelPersona.Rut" />
+	<ValidationMessage For="()=>ModelPersona.Rut"/>
+		<br />
+	<label for="Nombre">Nombre Completo:</label>
+	<input type="text" id="Nombre" @bind-value="@ModelPersona.Nombre" />
+	<ValidationMessage For="()=>ModelPersona.Nombre" />
+	<br />
+	<label for="FechaNac">Fecha Nacimiento:</label>
+	<input type="date" id="FechaNac" @bind-value="@ModelPersona.FechaNac" />
+	<ValidationMessage For="()=>ModelPersona.FechaNac" />
+	<br />
+	<label for="User">Username:</label>
+	<input type="text" id="User" @bind-value="@ModelPersona.User" />
+	<ValidationMessage For="()=>ModelPersona.User" />
+	<br />
+
+	<label for="Pass">Password:</label>
+	<input type="password" id="Pass" @bind-value="@ModelPersona.Password" />
+	<ValidationMessage For="()=>ModelPersona.Password" />
+	<br />
+
+	<button type="submit">Aceptar</button>
+	<button type="button" @onclick="Cancelar">Cancelar</button>
+
+</EditForm>
+
+@code {
+
+	private PersonaVm ModelPersona { get; set; } = new();
+
+	private void Aceptar()
+	{
+
+	}
+
+	private void Cancelar()
+	{
+		ModelPersona = new();
+	}
+
+}
+
